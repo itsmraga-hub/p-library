@@ -1,0 +1,8 @@
+greenlet==2.0.2
+Pillow==10.0.0
+psycopg2-binary==2.9.6
+PyQt5==5.15.9
+PyQt5-Qt5==5.15.2
+PyQt5-sip==12.12.1
+SQLAlchemy==2.0.18
+typing_extensions==4.7.1
