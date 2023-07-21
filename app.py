@@ -17,16 +17,20 @@ from PySide6.QtCore import Slot
 def say_hello():
     print("Button clicked, Hello!")
 
+
+def function():
+    print("The 'function' has been called!")
+
 app = QApplication(sys.argv)
 # Create a button
 button = QPushButton("Click me")
 # Connect the button to the function
 button.clicked.connect(say_hello)
-label = QLabel("Hello World!")
+# label = QLabel("Hello World!")
 # This HTML approach will be valid too!
-label2 = QLabel("<font color=red size=40>Hello World!</font>")
-label.show()
-label2.show()
+# label2 = QLabel("<font color=red size=40>Hello World!</font>")
+# label.show()
+# label2.show()
 # Show the button
 button.show()
 # Run the main Qt loop
