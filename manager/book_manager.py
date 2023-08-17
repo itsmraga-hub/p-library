@@ -1,5 +1,5 @@
 from models.book import Book
-from models.engine import storage
+from models import storage
 import uuid
 
 
@@ -12,7 +12,6 @@ class BookManager:
     Book.save()
 
   def list_books(self):
-    print(storage.__dict__)
     books = storage.all(Book).values()
     books = sorted(books, key=lambda book: book.id)
     return books
