@@ -42,7 +42,7 @@ class Storage:
             if cls is None or cls is classes[clss] or cls is clss:
                 objs = self.__session.query(classes[clss]).all()
                 for obj in objs:
-                    key = obj.__class__.__name__ + '.' + obj.id
+                    key = obj.__class__.__name__ + '.' + obj.u_id
                     new_dict[key] = obj
         return (new_dict)
 
@@ -70,7 +70,7 @@ class Storage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
-    def get(self, cls, id):
+    def get(self, cls, u_id):
         """
         Returns the object based on the class name and its ID, or
         None if not found
@@ -80,7 +80,7 @@ class Storage:
 
         all_cls = models.storage.all(cls)
         for value in all_cls.values():
-            if (value.id == id):
+            if (value.u_id == u_id):
                 return value
 
         return None
