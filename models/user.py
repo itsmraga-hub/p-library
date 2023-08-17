@@ -6,13 +6,12 @@ from hashlib import md5
 
 class User(BaseModel, Base):
   __tablename__ = 'users'
-  
-  id = Column(Integer, primary_key=True)
-  user_id = Column(String)
-  role = Column(String)
+
+  role = Column(String(128), default='member')
+  name = Column(String(128), nullable=False)
   email = Column(String(128), nullable=False)
-  national_id_number = Column(Integer)
-  books = relationship("Book", backref='user')
+  password = Column(String(256), nullable=False)
+  books = relationship("Book", backref='user', cascade="all, delete, delete-orphan")
 
   def __init__(self, *args, **kwargs):
     """initializes user"""
